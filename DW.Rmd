@@ -1,0 +1,48 @@
+---
+title: Data Wrangling the R way
+author: Miles McBain (ACEMS, QUT)
+date: March 22, 2005
+output: ioslides_presentation
+---
+
+# TLDR 
+This link: https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf
+
+And this one: https://s3.amazonaws.com/assets.datacamp.com/img/blog/data+table+cheat+sheet.pdf
+
+## Welcome to the 'Tidyverse'
+- Home of `dplyr`, `tidyr`, `readr` et. al
+- It's maifesto: http://vita.had.co.nz/papers/tidy-data.pdf
+  Hadley's paper in Journal of Open Source Software
+- Packages in the tidyverse aim to help you achieve that ideal tidy form.
+- The payoff is packages geared toward that form can accelerate your presentation and analysis. e.g. `ggplot2`, `caret` etc.
+- Code also conforms to patterns that make it easy to read: Split, Apply, Combine (more on that soon)
+
+## Drawbacks of Tidyverse
+- The Tidyverse is a great place to start.
+- BUT it has a specific idealogy: Modify data in place?
+
+<center>
+![NEVER](https://i.imgur.com/O94qJ.gif)
+
+
+</center>
+- The implications are suboptimal processing speed and memory usage. Most often this is worth it. Sometimes atlernatives will be a better choice...
+
+
+## Alternative 1:  Data.Table
+- Provides `fread()`: Super fast at reading gigabytes of delimeted data (.csv etc)
+- Can apply split, apply, combine type operations 'in place' (no big copies).
+- Familiar concepts to database programmers.
+- Chained operations get ugly fast. (example soon)
+
+## Alternative 2: Base R!
+- `read.csv()`, `data.frame`, `*apply()` functions, `[,]` adressing are still super conventient tools to have in your wrangling kit.
+
+## Alternative 3: Domain Specific 
+- Sometimes the data frame concept is just wrong. 
+- Image analysis is about matrices for example. 
+- Check out http://bioconductor.org/packages/release/bioc/html/EBImage.html
+
+# Examples 
+
